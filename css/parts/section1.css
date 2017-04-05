@@ -1,0 +1,17 @@
+.section-first {
+  height: 2000px;
+  background-color: white;
+  position: relative;
+}
+
+.section-first::before {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  height: 1vh;
+  width: 100vw;
+  background-color: white;
+  top: -2vh;
+}
+
+/*# sourceMappingURL=section1.css.map */

@@ -1,0 +1,1 @@
+{"version":3,"sources":["parts/basic.scss"],"names":[],"mappings":"AACA;EACE,UAAS;EACT,WAAU;CACX;;AACD;EACE,YAAW;CACZ","file":"basic.css","sourcesContent":["//Basic\n* {\n  margin: 0;\n  padding: 0;\n}\nbody {\n  width: 100%;\n}\n"]}
