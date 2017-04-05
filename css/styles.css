@@ -80,7 +80,7 @@ header h1::after {
   width: 100px;
   height: 100px;
   position: absolute;
-  bottom: 50px;
+  bottom: -10px;
   left: 50%;
   margin-left: -50px;
   opacity: 0;
@@ -89,21 +89,20 @@ header h1::after {
 
 .down_arrow span {
   position: absolute;
-  height: 50px;
-  width: 3px;
-  padding: 3px;
+  height: 30px;
+  width: 5px;
   background-color: white;
   border-radius: 10px;
 }
 
 .down_arrow span:nth-of-type(1) {
   transform: rotate(50deg);
-  right: 27px;
+  right: 38px;
 }
 
 .down_arrow span:nth-of-type(2) {
   transform: rotate(-50deg);
-  left: 27px;
+  left: 38px;
 }
 
 @keyframes fadeIn {
@@ -127,15 +126,15 @@ header h1::after {
 @keyframes moveDown {
   from {
     opacity: 0;
-    bottom: 50px;
+    bottom: 0px;
   }
   90% {
     opacity: 1;
-    bottom: 5px;
+    bottom: -40px;
   }
   to {
     opacity: 0;
-    bottom: 5px;
+    bottom: -40px;
   }
 }
 
@@ -152,7 +151,7 @@ header h1::after {
   height: 1vh;
   width: 100vw;
   background-color: white;
-  top: -2vh;
+  top: -2.5vh;
 }
 
 /*# sourceMappingURL=styles.css.map */
