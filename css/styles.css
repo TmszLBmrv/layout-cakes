@@ -150,16 +150,44 @@ header h1::after {
   top: -2.5vh;
 }
 
-.section_first h2 {
+.sf_header {
   text-align: center;
   font-size: 2.5em;
   color: #ff0054;
+  transition: 1s;
+  opacity: 0;
+  margin-bottom: 50px;
 }
 
-.section_first p {
-  margin: 50px auto 50px auto;
-  text-align: justify;
-  width: 78vw;
+.sf_container {
+  width: 100%;
+  height: auto;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+
+.sf_pic {
+  height: 300px;
+  width: 300px;
+  background-color: pink;
+  background-image: url("/img/cupCakes.jpg");
+  background-size: contain;
+  opacity: 0;
+}
+
+.sf_paragraph {
+  height: 300px;
+  width: 300px;
+  opacity: 0;
+}
+
+.sfh_land {
+  opacity: 1;
+  transition: 1s;
 }
 
 /*# sourceMappingURL=styles.css.map */
