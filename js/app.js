@@ -5,7 +5,7 @@ $(document).ready(function(){
   var sf_header = $(".sf_header");
   var sf_textblock = $(".sf_textblock");
   var sf_pic = $(".sf_pic");
-
+  var sp = $(".section_parallax");
 // reusable funcions
 
 
@@ -15,17 +15,49 @@ $(document).ready(function(){
  $(window).scroll(function() {
    var wScroll = $(this).scrollTop();
 
+// landing elements in first section
    if (wScroll >sf_header.offset().top - landHeight) {
      sf_header.addClass('sfh_land');
    }
-
    if (wScroll >sf_textblock.offset().top - landHeight) {
      sf_textblock.addClass('sfh_land');
    }
-
    if (wScroll >sf_pic.offset().top - landHeight) {
      sf_pic.addClass('sfh_land');
    }
+
+// parallax in second section
+  if ((wScroll + $(window).height()) > sp.offset().top) {
+    // console.log("hi");
+    $(".prlx1").css({
+      transform: "translateY( -"+ wScroll/6 + "%) rotate(" + wScroll/15 + "deg)"
+    });
+    $(".prlx2").css({
+      transform: "translateY( -"+ wScroll/8 + "%) rotate(-" + wScroll/15 + "deg)"
+    });
+    $(".prlx3").css({
+      transform: "translateY( -"+ wScroll/5.5 + "%) rotate(-" + wScroll/15 + "deg)"
+    });
+    $(".prlx4").css({
+      transform: "translateY( -"+ wScroll/7.5 + "%) rotate(-" + wScroll/15 + "deg)"
+    });
+    $(".prlx5").css({
+      transform: "translateY( -"+ wScroll/4.5 + "%) rotate(" + wScroll/15 + "deg)"
+    });
+    $(".prlx6").css({
+      transform: "translateY( -"+ wScroll/8 + "%) rotate(" + wScroll/10 + "deg)"
+    });
+    $(".prlx7").css({
+      transform: "translateY( -"+ wScroll/5 + "%) rotate(" + wScroll/8 + "deg)"
+    });
+    $(".prlx8").css({
+      transform: "translateY( -"+ wScroll/20 + "%) rotate(" + wScroll/8 + "deg)"
+    });
+    $(".prlx9").css({
+      transform: "translateY( -"+ wScroll/20 + "%) rotate(" + wScroll/8 + "deg)"
+    });
+  }
+
 
 
  });

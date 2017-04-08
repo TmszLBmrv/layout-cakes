@@ -143,6 +143,7 @@ header h1::after {
   background-color: white;
   position: relative;
   padding-top: 50px;
+  border-bottom: 1px solid lightgrey;
 }
 
 .section_first::before {
@@ -153,6 +154,16 @@ header h1::after {
   width: 100%;
   background-color: white;
   top: -2.5vh;
+}
+
+.section_first::after {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  height: 1vh;
+  width: 100%;
+  background-color: white;
+  bottom: -2.5vh;
 }
 
 .sf_header {
@@ -233,6 +244,117 @@ header h1::after {
   opacity: 1;
   transition: 1s;
   transform: translateX(0px);
+}
+
+.section_parallax {
+  height: 40vw;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  z-index: -20;
+}
+
+.section_parallax div {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.prlx1 {
+  height: 18vw;
+  width: 18vw;
+  left: 45%;
+  bottom: -30vw;
+  z-index: -1;
+  background-image: url("../img/praline1.png");
+}
+
+.prlx2 {
+  height: 10vw;
+  width: 10vw;
+  left: 30%;
+  bottom: -10vw;
+  z-index: -2;
+  background-image: url("../img/strawberry1.jpg");
+}
+
+.prlx3 {
+  height: 13vw;
+  width: 13vw;
+  left: 80%;
+  bottom: -40vw;
+  z-index: -2;
+  background-image: url("../img/cupcake1.png");
+}
+
+.prlx4 {
+  height: 12vw;
+  width: 12vw;
+  left: 10%;
+  bottom: 10vw;
+  z-index: -2;
+  background-image: url("../img/raspberry2.png");
+}
+
+.prlx5 {
+  height: 17vw;
+  width: 17vw;
+  left: 60%;
+  bottom: 0vw;
+  z-index: -1;
+  background-image: url("../img/praline1.png");
+}
+
+.prlx6 {
+  height: 12vw;
+  width: 12vw;
+  left: 80%;
+  bottom: 0vw;
+  z-index: -2;
+  background-image: url("../img/praline3.png");
+}
+
+.prlx7 {
+  height: 20vw;
+  width: 20vw;
+  left: 5%;
+  bottom: -70vw;
+  z-index: -2;
+  background-image: url("../img/cupcake2.jpg");
+}
+
+.prlx8 {
+  height: 6vw;
+  width: 6vw;
+  left: 5%;
+  bottom: 13vw;
+  z-index: -3;
+  background-image: url("../img/praline3.png");
+}
+
+.prlx9 {
+  height: 5vw;
+  width: 5vw;
+  left: 60%;
+  bottom: 5vw;
+  z-index: -3;
+  background-image: url("../img/raspberry1.png");
+}
+
+.section_third {
+  height: 800px;
+  border-top: 1px solid lightgrey;
+  position: relative;
+}
+
+.section_third::before {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  height: 1vh;
+  width: 100%;
+  background-color: white;
+  top: -2.5vh;
 }
 
 /*# sourceMappingURL=styles.css.map */
