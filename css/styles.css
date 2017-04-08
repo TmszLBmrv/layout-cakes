@@ -12,9 +12,16 @@ body {
 header {
   width: 100%;
   height: 80vh;
-  background-image: url("/img/header-background.jpg");
+  background-color: #935638;
+  background: url("../img/header_background.jpg");
   background-position: center;
+  background-size: auto;
+  background-attachment: scroll;
   position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 header h1 {
@@ -29,40 +36,39 @@ header h1 {
   top: 50vh;
   margin-top: -150px;
   animation: fadeIn 0.5s ease-in;
-  opacity: 0;
   animation-fill-mode: forwards;
   animation-delay: 0.25s;
   background-color: rgba(208, 0, 60, 0.4);
+  opacity: 0;
+  cursor: default;
+}
+
+header h1::before, header h1::after {
+  content: "";
+  background-color: white;
+  height: 3px;
+  width: 100%;
+  position: absolute;
+  animation-delay: 0.25s;
 }
 
 header h1::before {
-  content: "";
-  background-color: white;
-  height: 3px;
-  width: 100%;
   left: 0;
-  position: absolute;
+  top: 0;
   animation: rollOutLeft 1s linear;
-  animation-delay: 0.25s;
 }
 
 header h1::after {
-  content: "";
-  background-color: white;
-  height: 3px;
-  width: 100%;
   right: 0;
   bottom: 0;
-  position: absolute;
   animation: rollOutRight 1s linear;
-  animation-delay: 0.25s;
 }
 
 @media (min-width: 800px) {
   header {
     background-size: auto;
     background-attachment: fixed;
-    background-position: center;
+    background-position: center -200px;
   }
   header h1 {
     width: 500px;
@@ -134,7 +140,6 @@ header h1::after {
 }
 
 .section_first {
-  height: 2000px;
   background-color: white;
   position: relative;
   padding-top: 50px;
@@ -156,7 +161,7 @@ header h1::after {
   color: #ff0054;
   transition: 1s;
   opacity: 0;
-  margin-bottom: 50px;
+  transform: translateY(-50px);
 }
 
 .sf_container {
@@ -166,28 +171,68 @@ header h1::after {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -ms-flex-pack: center;
-      justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-align: center;
+      align-items: center;
+  padding-bottom: 150px;
+  overflow: hidden;
 }
 
 .sf_pic {
-  height: 300px;
+  height: 100%;
   width: 300px;
+  margin-top: 50px;
   background-color: pink;
-  background-image: url("/img/cupCakes.jpg");
+  background-image: url("../img/cupCakes.jpg");
   background-size: contain;
   opacity: 0;
+  transform: translateX(-300px);
+  border: 2px solid #ff0054;
 }
 
-.sf_paragraph {
-  height: 300px;
+.sf_textblock {
+  height: auto;
   width: 300px;
   opacity: 0;
+  text-align: justify;
+  margin-top: 50px;
+  transform: translateX(300px);
+}
+
+.sf_textblock h2 {
+  color: #ff0054;
+  text-align: right;
+  margin-bottom: 20px;
+  border-bottom: 2px dotted #ff0054;
+}
+
+@media (min-width: 800px) {
+  .section_first {
+    padding-top: 100px;
+  }
+  .sf_header {
+    margin-bottom: 50px;
+  }
+  .sf_textblock {
+    width: 500px;
+  }
+  .sf_pic {
+    height: 350px;
+    width: auto;
+  }
 }
 
 .sfh_land {
   opacity: 1;
   transition: 1s;
+  transform: translateY(0px);
+}
+
+.sft_land {
+  opacity: 1;
+  transition: 1s;
+  transform: translateX(0px);
 }
 
 /*# sourceMappingURL=styles.css.map */

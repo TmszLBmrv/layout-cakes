@@ -1,10 +1,13 @@
 $(document).ready(function(){
 
 // variables
-  var landHeight = ($(window).height())/2;
+  var landHeight = ($(window).height())/1.4;
   var sf_header = $(".sf_header");
-  var sf_paragraph = $(".sf_paragraph");
+  var sf_textblock = $(".sf_textblock");
   var sf_pic = $(".sf_pic");
+
+// reusable funcions
+
 
 
 
@@ -16,8 +19,8 @@ $(document).ready(function(){
      sf_header.addClass('sfh_land');
    }
 
-   if (wScroll >sf_paragraph.offset().top - landHeight) {
-     sf_paragraph.addClass('sfh_land');
+   if (wScroll >sf_textblock.offset().top - landHeight) {
+     sf_textblock.addClass('sfh_land');
    }
 
    if (wScroll >sf_pic.offset().top - landHeight) {
