@@ -5,6 +5,7 @@ $(document).ready(function(){
   var sf_header = $(".sf_header");
   var sf_textblock = $(".sf_textblock");
   var sf_pic = $(".sf_pic");
+  var sf_pic_container = $(".sf_pic_container");
   var sp = $(".section_parallax");
   var st_header = $(".st_header");
   var st_pic = $(".st_pic");
@@ -20,12 +21,15 @@ $(document).ready(function(){
    if (wScroll >sf_header.offset().top - landHeight) {
      sf_header.addClass('sfh_land');
    }
+
    if (wScroll >sf_textblock.offset().top - landHeight) {
      sf_textblock.addClass('sfh_land');
    }
-   if (wScroll >sf_pic.offset().top - landHeight) {
-     sf_pic.addClass('sfh_land');
+
+   if (wScroll >sf_pic_container.offset().top - landHeight) {
+     sf_pic_container.addClass('sfh_land');
    }
+
    if (wScroll >st_header.offset().top - landHeight) {
      st_header.addClass('sth_land');
    }
@@ -38,37 +42,46 @@ $(document).ready(function(){
 
    // parallax in second section
   if ((wScroll + $(window).height()) > sp.offset().top) {
-    // console.log("hi");
     $(".prlx1").css({
       transform: "translateY( -"+ wScroll/6 + "%) rotate(" + wScroll/15 + "deg)"
     });
+
     $(".prlx2").css({
       transform: "translateY( -"+ wScroll/8 + "%) rotate(-" + wScroll/15 + "deg)"
     });
+
     $(".prlx3").css({
       transform: "translateY( -"+ wScroll/5.5 + "%) rotate(-" + wScroll/15 + "deg)"
     });
+
     $(".prlx4").css({
       transform: "translateY( -"+ wScroll/7.5 + "%) rotate(-" + wScroll/15 + "deg)"
     });
+
     $(".prlx5").css({
       transform: "translateY( -"+ wScroll/5.5 + "%) rotate(" + wScroll/15 + "deg)"
     });
+
     $(".prlx6").css({
       transform: "translateY( -"+ wScroll/8 + "%) rotate(" + wScroll/10 + "deg)"
     });
+
     $(".prlx7").css({
       transform: "translateY( -"+ wScroll/5 + "%) rotate(" + wScroll/13 + "deg)"
     });
+
     $(".prlx8").css({
-      transform: "translateY( -"+ wScroll/15 + "%) rotate(" + wScroll/20 + "deg)"
+      transform: "translateY( -"+ wScroll/15 + "%) rotate(-" + wScroll/15 + "deg)"
     });
+
     $(".prlx9").css({
       transform: "translateY( -"+ wScroll/15 + "%) rotate(" + wScroll/8 + "deg)"
     });
+
     $(".prlx10").css({
       transform: "translateY( -"+ wScroll/10 + "%) rotate(" + wScroll/15 + "deg)"
     });
+
     $(".prlx11").css({
       transform: "translateY( -"+ wScroll/6 + "%) rotate(" + wScroll/15 + "deg)"
     });
@@ -76,7 +89,7 @@ $(document).ready(function(){
 
  });
 
-
+// last section clicks & hovers
  if (!("ontouchstart" in document.documentElement)) {
      document.documentElement.className += "no-touch";
  } else {

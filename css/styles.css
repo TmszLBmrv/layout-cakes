@@ -206,9 +206,47 @@ header h1::after {
   background-color: pink;
   background-image: url("../img/cupCakes.jpg");
   background-size: contain;
+  border: 2px solid #d0003c;
+  background-clip: content-box;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.sf_pic_container {
+  position: relative;
+  z-index: 1;
   opacity: 0;
   transform: translateX(-300px);
-  border: 2px solid #ff0054;
+}
+
+.sf_pic_container::before {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  box-shadow: 0px 15px 16px 1px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 0px 10px 10px 1px rgba(0, 0, 0, 0.8);
+  top: 80%;
+  bottom: 17px;
+  width: 50%;
+  left: 2.5%;
+  transform: rotate(-3deg);
+  transition: 2s;
+}
+
+.sf_pic_container::after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  box-shadow: 0px 15px 16px 1px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 0px 10px 10px 1px rgba(0, 0, 0, 0.8);
+  top: 80%;
+  bottom: 17px;
+  width: 50%;
+  right: 2.5%;
+  transform: rotate(3deg);
+  transition: 2s;
 }
 
 .sf_textblock {
@@ -220,6 +258,8 @@ header h1::after {
   padding-left: 10px;
   padding-right: 10px;
   transform: translateX(300px);
+  font-family: 'Handlee', cursive;
+  font-size: 1.2em;
 }
 
 .sf_textblock h2 {
@@ -298,7 +338,7 @@ header h1::after {
   height: 18vw;
   width: 18vw;
   left: 45%;
-  bottom: -18vw;
+  bottom: -8vw;
   z-index: -1;
   background-image: url("../img/praline1.png");
 }
@@ -307,7 +347,7 @@ header h1::after {
   height: 10vw;
   width: 10vw;
   left: 30%;
-  bottom: -3vw;
+  bottom: 7vw;
   z-index: -3;
   background-image: url("../img/strawberry1.png");
   opacity: 0.8;
@@ -317,7 +357,7 @@ header h1::after {
   height: 16vw;
   width: 16vw;
   left: 80%;
-  bottom: -38vw;
+  bottom: -28vw;
   z-index: -2;
   background-image: url("../img/cupcake1.png");
 }
@@ -326,7 +366,7 @@ header h1::after {
   height: 12vw;
   width: 12vw;
   left: 10%;
-  bottom: 17vw;
+  bottom: 27vw;
   z-index: -2;
   background-image: url("../img/raspberry2.png");
 }
@@ -335,7 +375,7 @@ header h1::after {
   height: 17vw;
   width: 17vw;
   left: 60%;
-  bottom: 10vw;
+  bottom: 20vw;
   z-index: -1;
   background-image: url("../img/praline1.png");
 }
@@ -344,7 +384,7 @@ header h1::after {
   height: 12vw;
   width: 12vw;
   left: 80%;
-  bottom: 8vw;
+  bottom: 18vw;
   z-index: -2;
   background-image: url("../img/praline3.png");
 }
@@ -353,7 +393,7 @@ header h1::after {
   height: 22vw;
   width: 22vw;
   left: 5%;
-  bottom: -62vw;
+  bottom: -52vw;
   z-index: -2;
   background-image: url("../img/cupcake2.png");
 }
@@ -362,16 +402,17 @@ header h1::after {
   height: 6vw;
   width: 6vw;
   left: 5%;
-  bottom: 21vw;
+  bottom: 31vw;
   z-index: -3;
   background-image: url("../img/praline3.1.png");
+  opacity: 0.6;
 }
 
 .prlx9 {
   height: 5vw;
   width: 5vw;
   left: 60%;
-  bottom: 8vw;
+  bottom: 18vw;
   z-index: -2;
   background-image: url("../img/raspberry1.png");
   opacity: 0.6;
@@ -381,7 +422,7 @@ header h1::after {
   height: 8vw;
   width: 8vw;
   left: 40%;
-  bottom: 28vw;
+  bottom: 38vw;
   z-index: -3;
   background-image: url("../img/cupcake1.1.png");
   opacity: 0.8;
@@ -478,13 +519,12 @@ header h1::after {
   height: 200px;
   width: 300px;
   margin: 10px;
-  border: 1px solid #d0003c;
+  border: 2px solid #f2a705;
   background-color: #f2a705;
   opacity: 0;
   transform: scale(1.05);
   transition: 0.5s;
   overflow: hidden;
-  background-image: url("../img/cupCakes.jpg");
   background-size: contain;
   cursor: pointer;
 }
@@ -494,6 +534,16 @@ header h1::after {
   height: 100%;
   width: 100%;
   position: absolute;
+}
+
+.st_pic div h1 {
+  font-family: 'Damion', cursive;
+  font-weight: lighter;
+  font-size: 3em;
+  color: white;
+  text-align: center;
+  line-height: 200px;
+  opacity: 0;
 }
 
 .st_pic div::before {
@@ -510,9 +560,39 @@ header h1::after {
   border-left: 150px solid transparent;
 }
 
+.st_pic:nth-of-type(1) {
+  background-image: url("../img/slide1.jpg");
+}
+
+.st_pic:nth-of-type(2) {
+  background-image: url("../img/slide2.jpg");
+}
+
+.st_pic:nth-of-type(3) {
+  background-image: url("../img/slide3.jpg");
+}
+
+.st_pic:nth-of-type(4) {
+  background-image: url("../img/slide4.jpg");
+}
+
+.st_pic:nth-of-type(5) {
+  background-image: url("../img/slide5.jpg");
+}
+
+.st_pic:nth-of-type(6) {
+  background-image: url("../img/slide6.jpg");
+}
+
 .no-touch .st_pic:hover div {
   right: 0;
   transition: 0.5s;
+}
+
+.no-touch .st_pic:hover div h1 {
+  transition: 0.3s;
+  transition-delay: 0.4s;
+  opacity: 1;
 }
 
 .st_picdiv_inactive div {
@@ -523,6 +603,12 @@ header h1::after {
 .st_picdiv_active div {
   right: 0;
   transition: 0.5s;
+}
+
+.st_picdiv_active div h1 {
+  transition: 0.3s;
+  transition-delay: 0.4s;
+  opacity: 1;
 }
 
 .sth_land {
