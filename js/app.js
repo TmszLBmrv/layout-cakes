@@ -12,7 +12,7 @@ $(document).ready(function(){
 
 
 // scroll
- $(window).scroll(function() {
+ $(document).scroll(function() {
    var wScroll = $(this).scrollTop();
 
 // landing elements in first section
@@ -42,19 +42,25 @@ $(document).ready(function(){
       transform: "translateY( -"+ wScroll/7.5 + "%) rotate(-" + wScroll/15 + "deg)"
     });
     $(".prlx5").css({
-      transform: "translateY( -"+ wScroll/4.5 + "%) rotate(" + wScroll/15 + "deg)"
+      transform: "translateY( -"+ wScroll/5.5 + "%) rotate(" + wScroll/15 + "deg)"
     });
     $(".prlx6").css({
       transform: "translateY( -"+ wScroll/8 + "%) rotate(" + wScroll/10 + "deg)"
     });
     $(".prlx7").css({
-      transform: "translateY( -"+ wScroll/5 + "%) rotate(" + wScroll/8 + "deg)"
+      transform: "translateY( -"+ wScroll/5 + "%) rotate(" + wScroll/13 + "deg)"
     });
     $(".prlx8").css({
-      transform: "translateY( -"+ wScroll/20 + "%) rotate(" + wScroll/8 + "deg)"
+      transform: "translateY( -"+ wScroll/15 + "%) rotate(" + wScroll/20 + "deg)"
     });
     $(".prlx9").css({
-      transform: "translateY( -"+ wScroll/20 + "%) rotate(" + wScroll/8 + "deg)"
+      transform: "translateY( -"+ wScroll/15 + "%) rotate(" + wScroll/8 + "deg)"
+    });
+    $(".prlx10").css({
+      transform: "translateY( -"+ wScroll/10 + "%) rotate(" + wScroll/15 + "deg)"
+    });
+    $(".prlx11").css({
+      transform: "translateY( -"+ wScroll/6 + "%) rotate(" + wScroll/15 + "deg)"
     });
   }
 
