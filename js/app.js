@@ -6,7 +6,8 @@ $(document).ready(function(){
   var sf_textblock = $(".sf_textblock");
   var sf_pic = $(".sf_pic");
   var sp = $(".section_parallax");
-// reusable funcions
+  var st_header = $(".st_header");
+  var st_pic = $(".st_pic");
 
 
 
@@ -15,7 +16,7 @@ $(document).ready(function(){
  $(document).scroll(function() {
    var wScroll = $(this).scrollTop();
 
-// landing elements in first section
+   // landing elements in first section
    if (wScroll >sf_header.offset().top - landHeight) {
      sf_header.addClass('sfh_land');
    }
@@ -25,8 +26,17 @@ $(document).ready(function(){
    if (wScroll >sf_pic.offset().top - landHeight) {
      sf_pic.addClass('sfh_land');
    }
+   if (wScroll >st_header.offset().top - landHeight) {
+     st_header.addClass('sth_land');
+   }
 
-// parallax in second section
+   $(".st_pic").each(function() {
+     if (wScroll >$(this).offset().top - landHeight*1.1) {
+       $(this).addClass('stp_land');
+     }
+   });
+
+   // parallax in second section
   if ((wScroll + $(window).height()) > sp.offset().top) {
     // console.log("hi");
     $(".prlx1").css({
@@ -64,12 +74,23 @@ $(document).ready(function(){
     });
   }
 
-
-
  });
 
 
-
-
+ if (!("ontouchstart" in document.documentElement)) {
+     document.documentElement.className += "no-touch";
+ } else {
+   $(".st_pic").each(function() {
+     $(this).click(function() {
+       if ($(this).hasClass('st_picdiv_inactive')) {
+         $(this).removeClass('st_picdiv_inactive')
+         $(this).addClass('st_picdiv_active')
+       } else {
+         $(this).addClass('st_picdiv_inactive')
+         $(this).removeClass('st_picdiv_active')
+       }
+     });
+   });
+ }
 
 }) //END OF SCRIPT

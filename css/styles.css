@@ -249,6 +249,12 @@ header h1::after {
   }
 }
 
+@media (min-width: 1300px) {
+  .sf_textblock {
+    margin-top: 0px;
+  }
+}
+
 .sfh_land {
   opacity: 1;
   transition: 1s;
@@ -274,6 +280,18 @@ header h1::after {
   position: absolute;
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+.section_parallax::after {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  height: 1vh;
+  width: 100%;
+  background-color: white;
+  bottom: 1vh;
+  border-top: 1px solid #f2a705;
+  border-bottom: 1px solid #f2a705;
 }
 
 .prlx1 {
@@ -418,21 +436,105 @@ header h1::after {
 }
 
 .section_third {
-  height: 800px;
-  border-top: 1px solid lightgrey;
+  height: auto;
   position: relative;
+  border-top: 1px solid #f2a705;
+  border-bottom: 1px solid #f2a705;
+  background-color: white;
+  padding-bottom: 100px;
+  overflow: auto;
 }
 
-.section_third::before {
-  position: absolute;
-  content: "";
-  display: inline-block;
-  height: 1vh;
+.st_header {
+  font-family: 'Damion', cursive;
+  font-weight: lighter;
+  text-align: center;
+  font-size: 3.5em;
+  color: #d0003c;
+  margin: 50px auto;
+  transition: 1s;
+  opacity: 0;
+  transform: translateY(-50px);
+}
+
+.st_container {
+  margin: 0 auto;
   width: 100%;
-  background-color: white;
-  top: -2.5vh;
-  border-top: 1px solid lightgrey;
-  border-bottom: 1px solid lightgrey;
+  max-width: 1000px;
+  height: auto;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-align: center;
+      align-items: center;
+  overflow: hidden;
+}
+
+.st_pic {
+  position: relative;
+  height: 200px;
+  width: 300px;
+  margin: 10px;
+  border: 1px solid #d0003c;
+  background-color: #f2a705;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: 0.5s;
+  overflow: hidden;
+  background-image: url("../img/cupCakes.jpg");
+  background-size: contain;
+  cursor: pointer;
+}
+
+.st_pic div {
+  background-color: rgba(208, 0, 60, 0.65);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.st_pic div::before {
+  box-sizing: border-box;
+  content: "";
+  position: absolute;
+  height: 200px;
+  width: 300px;
+  left: -100%;
+  background-color: transparent;
+  border-bottom: 100px solid transparent;
+  border-top: 100px solid rgba(208, 0, 60, 0.65);
+  border-right: 150px solid rgba(208, 0, 60, 0.65);
+  border-left: 150px solid transparent;
+}
+
+.no-touch .st_pic:hover div {
+  right: 0;
+  transition: 0.5s;
+}
+
+.st_picdiv_inactive div {
+  right: -200%;
+  transition: 0.5s;
+}
+
+.st_picdiv_active div {
+  right: 0;
+  transition: 0.5s;
+}
+
+.sth_land {
+  opacity: 1;
+  transition: 1s;
+  transform: translateY(0px);
+}
+
+.stp_land {
+  opacity: 1;
+  transition: 1s;
+  transform: scale(1);
 }
 
 /*# sourceMappingURL=styles.css.map */
