@@ -9,5 +9,4 @@ Try it out [**right here**](https://tmszlbmrv.github.io/layout-cakes/)
 
 And yes, It's pink.
 
-
 ![screenshot](/img/prlx5.gif)

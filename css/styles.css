@@ -183,6 +183,16 @@ header h1::after {
   transform: translateY(-50px);
 }
 
+.sf_header::-moz-selection {
+  background: rgba(208, 0, 60, 0.65);
+  color: white;
+}
+
+.sf_header::selection {
+  background: rgba(208, 0, 60, 0.65);
+  color: white;
+}
+
 .sf_container {
   width: 100%;
   height: auto;
@@ -204,7 +214,6 @@ header h1::after {
 .sf_pic {
   height: 100%;
   width: 300px;
-  margin-top: 50px;
   background-color: pink;
   background-image: url("../img/cupCakes.jpg");
   background-size: contain;
@@ -219,6 +228,7 @@ header h1::after {
   z-index: 1;
   opacity: 0;
   transform: translateX(-300px);
+  margin-top: 50px;
 }
 
 .sf_pic_container::before {
@@ -251,6 +261,14 @@ header h1::after {
   transition: 2s;
 }
 
+.sf_pic::-moz-selection {
+  background: rgba(242, 167, 5, 0.65);
+}
+
+.sf_pic::selection {
+  background: rgba(242, 167, 5, 0.65);
+}
+
 .sf_textblock {
   height: auto;
   width: 300px;
@@ -270,6 +288,24 @@ header h1::after {
   margin-bottom: 30px;
   border-bottom: 2px dotted #d0003c;
   padding-bottom: 30px;
+}
+
+.sf_textblock ::-moz-selection {
+  background: rgba(242, 167, 5, 0.65);
+}
+
+.sf_textblock ::selection {
+  background: rgba(242, 167, 5, 0.65);
+}
+
+.sf_textblock h2::-moz-selection {
+  background: rgba(208, 0, 60, 0.65);
+  color: white;
+}
+
+.sf_textblock h2::selection {
+  background: rgba(208, 0, 60, 0.65);
+  color: white;
 }
 
 @media (min-width: 650px) {
@@ -512,6 +548,16 @@ header h1::after {
   transform: translateY(-50px);
 }
 
+.st_header::-moz-selection {
+  background: rgba(208, 0, 60, 0.65);
+  color: white;
+}
+
+.st_header::selection {
+  background: rgba(208, 0, 60, 0.65);
+  color: white;
+}
+
 .st_container {
   margin: 0 auto;
   width: 100%;
@@ -548,6 +594,10 @@ header h1::after {
   height: 200px;
   width: 300px;
   position: absolute;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .st_pic div h1 {
