@@ -180,7 +180,6 @@ header h1::after {
   color: #d0003c;
   transition: 1s;
   opacity: 0;
-  transform: translateY(-50px);
 }
 
 .sf_header::-moz-selection {
@@ -319,9 +318,6 @@ header h1::after {
 }
 
 @media (min-width: 800px) {
-  .section_first {
-    padding-top: 100px;
-  }
   .sf_container {
     margin-bottom: 0px;
     -ms-flex-direction: row;
@@ -348,7 +344,7 @@ header h1::after {
 .sfh_land {
   opacity: 1;
   transition: 1s;
-  transform: translateY(0px);
+  transform: translateY(50px);
 }
 
 .sft_land {
