@@ -11,9 +11,6 @@ $(document).ready(function(){
   var st_pic = $(".st_pic");
 
 
-
-
-// scroll
  $(document).scroll(function() {
    var wScroll = $(this).scrollTop();
 
@@ -41,53 +38,36 @@ $(document).ready(function(){
    });
 
    // parallax in second section
-  if ((wScroll + $(window).height()) > sp.offset().top) {
-    $(".prlx1").css({
-      transform: "translateY( -"+ wScroll/6 + "%) rotate(" + wScroll/15 + "deg)"
-    });
+   if ((wScroll + $(window).height()) > sp.offset().top) {
 
-    $(".prlx2").css({
-      transform: "translateY( -"+ wScroll/8 + "%) rotate(-" + wScroll/15 + "deg)"
-    });
+     function rotateLeft(element, move, rotate){
+       $(element).css({
+         transform: "translateY( -" + wScroll/move + "%) rotate(-" + wScroll/rotate + "deg)"
+       });
+     }
 
-    $(".prlx3").css({
-      transform: "translateY( -"+ wScroll/5.5 + "%) rotate(-" + wScroll/15 + "deg)"
-    });
+     function rotateRight(element, move, rotate){
+       $(element).css({
+         transform: "translateY( -" + wScroll/move + "%) rotate(" + wScroll/rotate + "deg)"
+       });
+     }
 
-    $(".prlx4").css({
-      transform: "translateY( -"+ wScroll/7.5 + "%) rotate(-" + wScroll/15 + "deg)"
-    });
-
-    $(".prlx5").css({
-      transform: "translateY( -"+ wScroll/5.5 + "%) rotate(" + wScroll/15 + "deg)"
-    });
-
-    $(".prlx6").css({
-      transform: "translateY( -"+ wScroll/8 + "%) rotate(" + wScroll/10 + "deg)"
-    });
-
-    $(".prlx7").css({
-      transform: "translateY( -"+ wScroll/5 + "%) rotate(" + wScroll/13 + "deg)"
-    });
-
-    $(".prlx8").css({
-      transform: "translateY( -"+ wScroll/15 + "%) rotate(-" + wScroll/15 + "deg)"
-    });
-
-    $(".prlx9").css({
-      transform: "translateY( -"+ wScroll/15 + "%) rotate(" + wScroll/8 + "deg)"
-    });
-
-    $(".prlx10").css({
-      transform: "translateY( -"+ wScroll/10 + "%) rotate(" + wScroll/15 + "deg)"
-    });
-
-    $(".prlx11").css({
-      transform: "translateY( -"+ wScroll/6 + "%) rotate(" + wScroll/15 + "deg)"
-    });
-  }
+     rotateRight(".prlx1", 6, 15);
+     rotateLeft(".prlx2", 8, 15);
+     rotateLeft(".prlx3", 5.5, 15);
+     rotateLeft(".prlx4", 7.5, 15);
+     rotateRight(".prlx5", 5.5, 15);
+     rotateRight(".prlx6", 8, 10);
+     rotateRight(".prlx7", 5, 13);
+     rotateLeft(".prlx8", 15, 15);
+     rotateRight("prlx9", 15, 8);
+     rotateRight("prlx10", 10, 15);
+     rotateRight("prlx11", 6, 15);
+    }
 
  });
+
+
 
 // last section clicks & hovers
  if (!("ontouchstart" in document.documentElement)) {
