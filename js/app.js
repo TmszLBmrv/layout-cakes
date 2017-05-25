@@ -68,7 +68,6 @@ $(document).ready(function(){
  });
 
 
-
 // last section clicks & hovers
  if (!("ontouchstart" in document.documentElement)) {
      document.documentElement.className += "no-touch";
