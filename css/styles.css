@@ -87,6 +87,8 @@ header h1::after {
   margin-left: -50px;
   opacity: 0;
   animation: moveDown 1.3s ease-in-out 1.5s infinite;
+  padding-top: 30px;
+  cursor: pointer;
 }
 
 .down_arrow span {

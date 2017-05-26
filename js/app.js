@@ -1,20 +1,26 @@
 $(document).ready(function(){
 
-// variables
-  var landHeight = ($(window).height())/1.4;
-  var sf_header = $(".sf_header");
-  var sf_textblock = $(".sf_textblock");
-  var sf_pic = $(".sf_pic");
-  var sf_pic_container = $(".sf_pic_container");
-  var sp = $(".section_parallax");
-  var st_header = $(".st_header");
-  var st_pic = $(".st_pic");
+// g variables
+  var landHeight = ($(window).height())/1.4,
+      sf_header = $(".sf_header"),
+      sf_textblock = $(".sf_textblock"),
+      sf_pic = $(".sf_pic"),
+      sf_pic_container = $(".sf_pic_container"),
+      sp = $(".section_parallax"),
+      st_header = $(".st_header"),
+      st_pic = $(".st_pic");
 
+// arrow button
+  $(".down_arrow").click(function(){
+    $('html, body').animate({
+      scrollTop: sf_header.offset().top
+    }, 700);
+  });
 
  $(document).scroll(function() {
    var wScroll = $(this).scrollTop();
 
-   // landing elements in first section
+// landing elements in first section
    if (wScroll >sf_header.offset().top - landHeight) {
      sf_header.addClass('sfh_land');
    }
@@ -37,7 +43,7 @@ $(document).ready(function(){
      }
    });
 
-   // parallax in second section
+// parallax in second section
    if ((wScroll + $(window).height()) > sp.offset().top) {
 
      function rotateLeft(element, move, rotate){
@@ -60,9 +66,9 @@ $(document).ready(function(){
      rotateRight(".prlx6", 8, 10);
      rotateRight(".prlx7", 5, 13);
      rotateLeft(".prlx8", 15, 15);
-     rotateRight("prlx9", 15, 8);
-     rotateRight("prlx10", 10, 15);
-     rotateRight("prlx11", 6, 15);
+     rotateRight(".prlx9", 15, 8);
+     rotateRight(".prlx10", 10, 15);
+     rotateRight(".prlx11", 6, 15);
     }
 
  });
