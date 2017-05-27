@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-// g variables
+  // g variables
   var landHeight = ($(window).height())/1.4,
       sf_header = $(".sf_header"),
       sf_textblock = $(".sf_textblock"),
@@ -10,7 +10,7 @@ $(document).ready(function(){
       st_header = $(".st_header"),
       st_pic = $(".st_pic");
 
-// arrow button
+  // arrow button
   $(".down_arrow").click(function(){
     $('html, body').animate({
       scrollTop: sf_header.offset().top
@@ -20,22 +20,16 @@ $(document).ready(function(){
  $(document).scroll(function() {
    var wScroll = $(this).scrollTop();
 
-// landing elements in first section
-   if (wScroll >sf_header.offset().top - landHeight) {
-     sf_header.addClass('sfh_land');
-   }
-
-   if (wScroll >sf_textblock.offset().top - landHeight) {
-     sf_textblock.addClass('sfh_land');
-   }
-
-   if (wScroll >sf_pic_container.offset().top - landHeight) {
-     sf_pic_container.addClass('sfh_land');
-   }
-
-   if (wScroll >st_header.offset().top - landHeight) {
-     st_header.addClass('sth_land');
-   }
+   // landing elements in first section
+    function landing(element, className) {
+      if (wScroll >element.offset().top - landHeight) {
+        element.addClass(className);
+      }
+    }
+    landing(sf_header, "sfh_land");
+    landing(sf_textblock, "sfh_land");
+    landing(sf_pic_container, "sfh_land");
+    landing(st_header, "sth_land");
 
    $(".st_pic").each(function() {
      if (wScroll >$(this).offset().top - landHeight*1.1) {
@@ -43,7 +37,7 @@ $(document).ready(function(){
      }
    });
 
-// parallax in second section
+   // parallax in second section
    if ((wScroll + $(window).height()) > sp.offset().top) {
 
      function rotateLeft(element, move, rotate){
@@ -74,7 +68,7 @@ $(document).ready(function(){
  });
 
 
-// last section clicks & hovers
+ // last section clicks & hovers
  if (!("ontouchstart" in document.documentElement)) {
      document.documentElement.className += "no-touch";
  } else {
