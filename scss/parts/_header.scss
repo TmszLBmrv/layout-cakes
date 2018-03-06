@@ -1,0 +1,131 @@
+// HEADER
+  header {
+    width: 100%;
+    height: 90vh;
+    background-color: rgb(147, 86, 56);
+    background: url("../img/header_background.jpg");
+    background-position: center;
+    background-size: auto;
+    background-attachment:scroll;
+    position: relative;
+    user-select: none;
+
+    h1 {
+      font-family: 'Damion', cursive;
+      font-weight: lighter;
+      height: 140px;
+      width: 100%;
+      color: white;
+      line-height: 140px;
+      text-align: center;
+      font-size: 6em;
+      position: absolute;
+      top: 50vh;
+      margin-top: -150px;
+      animation: fadeIn 0.5s ease-in;
+      animation-fill-mode: forwards;
+      animation-delay: 0.25s;
+      background-color: $pinkglass;
+      opacity: 0;
+      cursor: default;
+
+      &::before, &::after {
+        content: "";
+        background-color: white;
+        height: 3px;
+        width: 100%;
+        position: absolute;
+        animation-delay: 0.25s;
+      }
+      &::before {
+        left: 0;
+        top: 0;
+        animation: rollOutLeft 1s linear;
+      };
+
+      &::after {
+        right: 0;
+        bottom: 0;
+        animation: rollOutRight 1s linear;
+      }
+    }
+  }
+
+@media (min-width: 800px) {
+  header {
+    background-size: auto;
+    background-attachment: fixed;
+    background-position: center -200px;
+    h1 {
+      width: 500px;
+      left: 50%;
+      margin-left: -250px;
+    }
+  }
+}
+
+.down_arrow {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  margin-left: -50px;
+  opacity: 0;
+  animation: moveDown 1.3s ease-in-out 1.5s infinite;
+  padding-top: 30px;
+  cursor: pointer;
+  span{
+    position: absolute;
+    height: 30px;
+    width: 5px;
+    background-color: white;
+    border-radius: 10px;
+  }
+  span:nth-of-type(1){
+    transform: rotate(50deg);
+    right:38px;
+  }
+  span:nth-of-type(2){
+    transform: rotate(-50deg);
+    left:38px;
+  }
+}
+
+
+
+
+//                     ANIMATIONS
+
+@keyframes fadeIn {
+  100% {
+  opacity: 1;
+  }
+}
+
+@keyframes rollOutLeft {
+  0% {
+    width: 0;
+  }
+}
+
+@keyframes rollOutRight{
+  0% {
+  width: 0;
+  }
+}
+
+@keyframes moveDown {
+  from {
+    opacity: 0;
+    bottom: 0px;
+  }
+  90% {
+    opacity: 1;
+    bottom: -40px;
+  }
+  to {
+    opacity: 0;
+    bottom: -40px;
+  }
+}

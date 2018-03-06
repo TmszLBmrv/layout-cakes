@@ -1,0 +1,140 @@
+.section_third {
+  height: auto;
+  position: relative;
+  border-top: 2px solid $yellow;
+  border-bottom: 2px solid $pink;
+  background-color: white;
+  // margin-bottom: 150px;
+  padding-bottom: 100px;
+  overflow: auto;
+}
+
+.st_header {
+  font-family: 'Damion', cursive;
+  font-weight: lighter;
+  text-align: center;
+  font-size: 3.5em;
+  color: $pink;
+  margin: 50px auto;
+  transition: 1s;
+  opacity: 0;
+  transform: translateY(-50px);
+}
+
+.st_header::selection{
+  background: $pinkglass;
+  color: white;
+}
+
+.st_container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+}
+
+.st_pic {
+  position: relative;
+  height: 200px;
+  width: 300px;
+  margin: 10px;
+  border: 2px solid $yellow;
+  background-color: $yellow;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: 0.5s;
+  overflow: hidden;
+  background-size: cover;
+  cursor: pointer;
+
+  div {
+    background-color: $pinkglass;
+    height: 200px;
+    width: 300px;
+    position: absolute;
+    user-select: none;
+    h1 {
+      font-family: 'Damion', cursive;
+      font-weight: lighter;
+      font-size: 3em;
+      color: white;
+      text-align: center;
+      line-height: 200px;
+      opacity: 0;
+    }
+  }
+  div::before {
+    box-sizing: border-box;
+    content: "";
+    position: absolute;
+    height: 200px;
+    width: 300px;
+    left: -300px;
+    background-color: transparent;
+    border-bottom: 100px solid transparent;
+    border-top: 100px solid $pinkglass;
+    border-right: 150px solid $pinkglass;
+    border-left: 150px solid transparent;
+  }
+}
+
+.st_pic:nth-of-type(1) {
+  background-image: url("../img/slide1.jpg");
+}
+.st_pic:nth-of-type(2) {
+  background-image: url("../img/slide2.jpg");
+}
+.st_pic:nth-of-type(3) {
+  background-image: url("../img/slide3.jpg");
+}
+.st_pic:nth-of-type(4) {
+  background-image: url("../img/slide4.jpg");
+}
+.st_pic:nth-of-type(5) {
+  background-image: url("../img/slide5.jpg");
+}
+.st_pic:nth-of-type(6) {
+  background-image: url("../img/slide6.jpg");
+}
+
+  .no-touch .st_pic:hover div{
+    right: 0;
+    transition: 0.5s;
+    h1 {
+      transition: 0.3s;
+      transition-delay: 0.4s;
+      opacity: 1;
+    }
+  }
+
+
+  .st_picdiv_inactive div {
+    right: -600px;
+    transition: 0.5s;
+  }
+  .st_picdiv_active div {
+    right: 0;
+    transition: 0.5s;
+    h1 {
+      transition: 0.3s;
+      transition-delay: 0.4s;
+      opacity: 1;
+    }
+  }
+
+
+
+
+//                     LANDING ANIMATIONS
+
+.sth_land {
+  @include land(1s, translateY(0px));
+}
+.stp_land {
+  @include land(1s, scale(1));
+}

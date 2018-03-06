@@ -1,0 +1,182 @@
+.section_parallax {
+  height: 70vw;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  z-index: -20;
+  background-color: lighten($pink, 57);
+
+  div {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    display: inline-block;
+    height: 1vh;
+    width: 100%;
+    background-color: white;
+    bottom: 1vh;
+    border-top: 2px solid $yellow;
+    border-bottom: 2px solid $yellow;
+  }
+}
+
+
+.prlx1 {
+  height: 18vw;
+  width: 18vw;
+  left: 45%;
+  bottom: -8vw;
+  z-index: -1;
+  background-image: url("../img/praline1.png");
+}
+
+.prlx2 {
+  height: 10vw;
+  width: 10vw;
+  left: 30%;
+  bottom: 7vw;
+  z-index: -3;
+  background-image: url("../img/strawberry1.png");
+  opacity: 0.8;
+}
+
+.prlx3 {
+  height: 16vw;
+  width: 16vw;
+  left: 80%;
+  bottom: -28vw;
+  z-index: -2;
+  background-image: url("../img/cupcake1.png");
+}
+
+.prlx4 {
+  height: 12vw;
+  width: 12vw;
+  left: 10%;
+  bottom: 27vw;
+  z-index: -2;
+  background-image: url("../img/raspberry2.png");
+}
+
+.prlx5 {
+  height: 17vw;
+  width: 17vw;
+  left: 60%;
+  bottom: 20vw;
+  z-index: -1;
+  background-image: url("../img/praline1.png");
+}
+
+.prlx6 {
+  height: 12vw;
+  width: 12vw;
+  left: 80%;
+  bottom: 18vw;
+  z-index: -2;
+  background-image: url("../img/praline3.png");
+}
+
+.prlx7 {
+  height: 22vw;
+  width: 22vw;
+  left: 5%;
+  bottom: -52vw;
+  z-index: -2;
+  background-image: url("../img/cupcake2.png");
+}
+
+.prlx8 {
+  height: 6vw;
+  width: 6vw;
+  left: 5%;
+  bottom: 31vw;
+  z-index: -3;
+  background-image: url("../img/praline3.1.png");
+  opacity: 0.6;
+}
+
+.prlx9 {
+  height: 5vw;
+  width: 5vw;
+  left: 60%;
+  bottom: 18vw;
+  z-index: -2;
+  background-image: url("../img/raspberry1.png");
+  opacity: 0.6;
+}
+
+.prlx10 {
+  height: 8vw;
+  width: 8vw;
+  left: 40%;
+  bottom: 38vw;
+  z-index: -3;
+  background-image: url("../img/cupcake1.1.png");
+  opacity: 0.8;
+}
+
+.prlx11 {
+  height: 20vw;
+  width: 20vw;
+  left: 35%;
+  bottom: -53vw;
+  z-index: -3;
+  background-image: url("../img/praline2.png");
+}
+
+
+
+@media (min-width: 800px) {
+  .section_parallax {
+    height: 40vw;
+  }
+
+  .prlx1 {
+    bottom: -28vw;
+  }
+
+  .prlx2 {
+    bottom: -13vw;
+  }
+
+  .prlx3 {
+    bottom: -48vw;
+  }
+
+  .prlx4 {
+    bottom: 7vw;
+  }
+
+  .prlx5 {
+    bottom: 0vw;
+  }
+
+  .prlx6 {
+    bottom: -2vw;
+  }
+
+  .prlx7 {
+    bottom: -72vw;
+  }
+
+  .prlx8 {
+    bottom: 11vw;
+  }
+
+  .prlx9 {
+    bottom: 8vw;
+  }
+
+  .prlx10 {
+    bottom: 18vw;
+  }
+
+  .prlx11 {
+    bottom: -63vw;
+  }
+}

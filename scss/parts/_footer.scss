@@ -1,0 +1,63 @@
+footer {
+  background-color: lighten($pink, 57);
+  height: 80px;
+  position: relative;
+  overflow: hidden;
+  color: $pink;
+  border-bottom: 2px solid $pink;
+  & ::selection{
+    background: $pinkglass;
+    color: white;
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    display: inline-block;
+    height: 1vh;
+    width: 100%;
+    background-color: white;
+    top: 1vh;
+    border-bottom: 2px solid $pink;
+    border-top: 2px solid $pink;
+  }
+}
+
+.f_container {
+  height: 50%;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 35px;
+  display: flex;
+  justify-content: space-between;
+}
+.f_logo_container {
+   h1 {
+    font-family: 'Damion', cursive;
+    font-weight: lighter;
+    display: block;
+
+  }
+  width: 30%;
+}
+.f_icons_container {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+  a {
+    margin: 0;
+    color: $pink;
+    font-size: 30px;
+    transition: 0.2s ease-in-out;
+    &:hover{
+      transform: scale(1.3);
+      transition: 0.2s ease-in-out;
+    }
+  }
+}
+
+
+@media (min-width: 650px) {
+  .f_icons_container {
+    width: 250px;
+  }
+}
